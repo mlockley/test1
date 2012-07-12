@@ -1,9 +1,9 @@
 package test1;
 
 
-import org.fixprotocol.fixml_5_0_sp2.ExecutionReportMessageT;
-import org.fixprotocol.fixml_5_0_sp2.FIXML;
-import org.fixprotocol.fixml_5_0_sp2.ObjectFactory;
+import uk.co.thelockleys.fixml.ExecutionReportMessageT;
+import uk.co.thelockleys.fixml.FIXML;
+import uk.co.thelockleys.fixml.ObjectFactory;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

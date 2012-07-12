@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>test1</groupId>
-  <artifactId>test1</artifactId>
+  <groupId>uk.co.thelockleys</groupId>
+  <artifactId>fixml</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
-  <name>test1</name>
+  <name>fixml</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -26,23 +26,20 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.8.2</version>
-                <configuration>
-                        <!-- Changes the default schema directory -->
-                        <schemaDirectory>src/main/schema/fixml</schemaDirectory>
-                        <schemaIncludes>
-                            <include>**/*.xsd</include>
-                        </schemaIncludes>
-                </configuration>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.2</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>generate</goal>
+                            <goal>xjc</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <packageName>uk.co.thelockleys.fixml</packageName>
+                    <verbose>true</verbose>
+                </configuration>
             </plugin>
         </plugins>
   </build>
