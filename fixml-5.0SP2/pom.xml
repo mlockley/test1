@@ -40,7 +40,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <packageName>uk.co.thelockleys.fixml</packageName>
+                    <packageName>com.jpmc.ib.cdt.clearing.fixml</packageName>
                     <verbose>true</verbose>
                 </configuration>
             </plugin>

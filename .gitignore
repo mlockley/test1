@@ -3,6 +3,7 @@
 #################
 .idea
 *.iml
+target/
 *.pydevproject
 .project
 .metadata

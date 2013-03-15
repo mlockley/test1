@@ -7,6 +7,7 @@
     <version>1.0.0</version>
     <modules>
         <module>fixml-5.0SP2</module>
+        <module>normaliser</module>
     </modules>
     <packaging>pom</packaging>
   <name>root</name>

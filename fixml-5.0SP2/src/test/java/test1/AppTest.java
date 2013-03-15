@@ -1,9 +1,9 @@
 package test1;
 
 
-import uk.co.thelockleys.fixml.ExecutionReportMessageT;
-import uk.co.thelockleys.fixml.FIXML;
-import uk.co.thelockleys.fixml.ObjectFactory;
+import com.jpmc.ib.cdt.clearing.fixml.ExecutionReportMessageT;
+import com.jpmc.ib.cdt.clearing.fixml.FIXML;
+import com.jpmc.ib.cdt.clearing.fixml.ObjectFactory;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
