@@ -48,27 +48,25 @@
         <beans:property name="destination" ref="amq.inbound"/>
     </beans:bean>
 
-    <jms:message-driven-channel-adapter id="jmsIn"
-                                        channel="outbound"
-                                        container="messageContainer"/>
     <channel id="inbound"/>
     <channel id="xml-object"/>
     <channel id="outbound"/>
+    <channel id="outbound-str"/>
 
+    <jms:message-driven-channel-adapter id="jmsIn"
+                                        channel="inbound"
+                                        container="messageContainer"/>
     <!--  xml transformer here -->
     <int-xml:unmarshalling-transformer input-channel="inbound" output-channel="xml-object" unmarshaller="jaxb2Marshaller"/>
 
-    <!-- pair creator here -->
-
-
-
-
     <!-- gemfire persistor here -->
-    <int-xml:marshalling-transformer input-channel="xml-object" output-channel="outbound" marshaller="jaxb2Marshaller" result-type="StringResult"/>
 
-    <jms:outbound-channel-adapter id="jmsOut" connection-factory="jmsConnectionFactory" destination="amq.outbound"
-                                  pub-sub-domain="false" channel="outbound"/>
+    <!-- marshall back to string -->
+    <int-xml:marshalling-transformer input-channel="xml-object" output-channel="outbound" marshaller="jaxb2Marshaller" result-type="StringResult" />
 
+    <object-to-string-transformer input-channel="outbound" output-channel="outbound-str"/>
+
+    <jms:outbound-channel-adapter id="jmsOut" connection-factory="jmsConnectionFactory" destination="amq.outbound" pub-sub-domain="false" channel="outbound-str"/>
 
     <beans:bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
         <beans:property name="contextPath" value="com.jpmc.ib.cdt.clearing.fixml"/>

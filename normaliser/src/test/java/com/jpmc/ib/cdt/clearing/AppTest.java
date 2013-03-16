@@ -70,7 +70,7 @@ public class AppTest {
 
             final String value = String.class.cast(template.receiveAndConvert("amq.outbound"));
             assertNotNull(value);
-            assertEquals(fixMessage, value);
+            assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><FIXML xmlns=\"http://www.fixprotocol.org/FIXML-5-0-SP2\"><ExecRpt/></FIXML>", value);
 
             TimeUnit.SECONDS.sleep(1);
         }
